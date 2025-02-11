@@ -6,7 +6,7 @@ http.createServer(function (request, response) {
    var hscore = 0;
    request.on('data', function (chunk) {
         hscore = JSON.parse(chunk).hs;
-        fs.writeFile('data.txt', hscore, function(err){
+        fs.writeFile('data.txt', hscore.toString(), function(err){
          if(err)
             return;
         });
